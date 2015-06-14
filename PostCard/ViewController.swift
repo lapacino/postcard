@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterEmailTextField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var mailMessage: UIButton!
+    @IBOutlet weak var messageLabel1: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func sendMessage(sender: AnyObject) {
+        
         messageLabel.hidden = false
         messageLabel.text = enterEmailTextField.text
         messageLabel.textColor = UIColor.blueColor()
         enterEmailTextField.text = ""
+        messageLabel1.hidden = false
+        messageLabel1.text = enterNameTextField.text
+        messageLabel1.textColor = UIColor.blackColor()
+        enterNameTextField.text = ""
         enterEmailTextField.resignFirstResponder()
         mailMessage.setTitle("Mail Send", forState: UIControlState.Normal)
     }
 
+   
     
 
 }
